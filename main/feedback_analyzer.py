@@ -1,7 +1,7 @@
+import os
 import google.generativeai as genai
 
-GOOGLE_API_KEY = "AIzaSyB5IAY1e0H-lCdM9Nu2zr97zBNxi0UIrak"
-genai.configure(api_key=GOOGLE_API_KEY)
+genai.configure(api_key="AIzaSyB5IAY1e0H-lCdM9Nu2zr97zBNxi0UIrak")
 
 def generate_faculty_review(questions, opinions):
     model = genai.GenerativeModel('gemini-pro')
