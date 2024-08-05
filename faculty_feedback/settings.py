@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-#0hsv$x3az=e!zvjhiafe=wusg4xoe(8004$w6giak%=^x8xi5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -75,13 +75,21 @@ WSGI_APPLICATION = "faculty_feedback.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
-}
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
+#     }
+# }
 
+
+# Render PostgreSQL Database
+
+import dj_database_url
+
+DATABASES = {
+    "default": dj_database_url.parse('postgresql://faculty_feedback_db_user:QAB9eApDzIm5g4BDFl4kUx8NKI58TqUR@dpg-cqoap3tds78s73btmfm0-a.singapore-postgres.render.com/faculty_feedback_db')
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
