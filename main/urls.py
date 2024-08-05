@@ -3,9 +3,9 @@ from main import views
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-    path('', views.login_user, name='login'),
-    path('index/', views.index, name="index"),
-    path('sindex/', views.sindex, name="sindex"),
+    path('', views.index, name='index'),
+    path('login/', views.login_user, name="login"),
+    # path('sindex/', views.sindex, name="sindex"),
     path('register/', views.register_user, name='register'),
     path('logout/', views.logout_user, name='logout'), 
     path('feedback/', views.feedback, name='feedback'),
